@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="./greekRules.js"></script>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+    </canvas>
+    <button onclick="zoomIn()">+</button>
+    <button onclick="zoomOut()">-</button>
+
+    <script>
+      setCanvas('myCanvas');
+      let c = new Circle(80, 0, pointsToAngle(30, 10, 20, 10));
+      let l = new Line(10, 20, 20, 30);
+      compass(c, 90, 50);
+      ruler(l);
+      plotPoint(90, 10);
+    </script>
+  </body>
+</html>
