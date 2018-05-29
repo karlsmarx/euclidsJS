@@ -2,20 +2,28 @@
 <html>
   <head>
     <script type="text/javascript" src="./greekRules.js"></script>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
-    </canvas>
-    <button onclick="zoomIn()">+</button>
-    <button onclick="zoomOut()">-</button>
-
-    <script>
-      setCanvas('myCanvas');
-      let c = new Circle(80, 0, pointsToAngle(30, 10, 20, 10));
-      let l = new Line(10, 20, 20, 30);
-      compass(c, 90, 50);
-      ruler(l);
-      plotPoint(90, 10);
-    </script>
+    <section class="page">
+      <h1 class="center">Os Elementos</h1>
+      <h2>Euclides</h2>
+      <h3>Grecia</h3>
+      <h4>Grecia</h4>
+      <p>
+        <span class="canvas-content left">
+          <button onclick="zoomIn()">+</button>
+          <button onclick="zoomOut()">-</button>
+          <canvas id="my-canvas"></canvas>
+        </span>
+        Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum 
+      sobreviveu não só a cinco séculos, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou
+      sobrevive <blockquote>como também ao salto para a editoração eletrônica, </blockquote>
+      decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum
+      eu não só a cinco séculos, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+      <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum 
+      sobreviveu não só a cinco séculos, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
+      </p>
+    </section>
   </body>
 </html>
