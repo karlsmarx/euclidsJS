@@ -1,109 +1,114 @@
-let scaleConst = 1; // Número da escala atual
+class Rules {
 
-let canvas = null; // Canvas
-let ctx = null; // Contexto do canvas
+  constructor () {
+    this.scaleConst = 1; // Número da escala atual
 
-function setCanvas(element) { // Define qual o canvas a ser usado
-  canvas = document.getElementById(element);
-  ctx = canvas.getContext("2d");
-}
-
-function plotPoint(x, y) { // Plotagem de pontos de acordo com a escala (sem dimensão)
-  let scalePoint = 0;
-  
-  if (scaleConst <= 1)
-    scalePoint = 1
-  else 
-    scalePoint = 1/scaleConst
-
-  ctx.arc(x/scaleConst, y/scaleConst, scalePoint, 0, 2 * Math.PI);
-  ctx.stroke();
-}
-
-function pointsToAngle(x1, y1, x2, y2) { // Retorna o arco entre dois pontos em radianos
-  return Math.atan2(y2 - y1, x2 - x1);
-}
-
-function zoomIn() { // Aumenta o zoom do canvas
-  if (scaleConst < 10) {
-    ctx.scale(2,2);
-    scaleConst *= 2;
+    this.canvas = null; // Canvas
+    this.ctx = null; // Contexto do canvas
   }
 
-  ctx.lineWidth=1/scaleConst;
-}
-
-function zoomOut() { // Diminui o zoom do canvas
-  if (scaleConst > 1/8) {
-    ctx.scale(1/2,1/2);
-    scaleConst /= 2;
+  setCanvas(element) { // Define qual o canvas a ser usado
+    this.canvas = document.getElementById(element);
+    this.ctx = this.canvas.getContext("2d");
   }
 
-  ctx.lineWidth=1/scaleConst;
-}
+  plotPoint(x, y) { // Plotagem de pontos de acordo com a escala (sem dimensão)
+    this.scalePoint = 0;
+    
+    if (this.scaleConst <= 1)
+      this.scalePoint = 1
+    else 
+      this.scalePoint = 1/this.scaleConst
 
-function compass(circle, x, y) { // Desenha o circulo com centro no ponto dado
-  if (circle instanceof Circle) {
-    let startTime = Date.now();
-
-    let interval = setInterval(function() {
-      let portion = clamp((Date.now() - startTime) / 400);
-
-      ctx.beginPath();
-      ctx.arc(x, y, circle.radius, circle.startAngle, circle.finalAngle*portion);
-      ctx.stroke();
-
-      if (portion === 1)
-        clearInterval(interval);
-
-    }, 10);
+    this.ctx.arc(x/this.scaleConst, y/this.scaleConst, this.scalePoint, 0, 2 * Math.PI);
+    this.ctx.stroke();
   }
-}
 
-function ruler(line) { // Traça ma reta entre dois pontos (respeitando a direção de desenho)
-  if (line instanceof Line) {
-    let startTime = Date.now();
+  pointsToAngle(x1, y1, x2, y2) { // Retorna o arco entre dois pontos em radianos
+    return Math.atan2(y2 - y1, x2 - x1);
+  }
 
-    let interval = setInterval(function() {
-      let portion = clamp((Date.now() - startTime) / 400);
+  zoomIn() { // Aumenta o zoom do canvas
+    if (this.scaleConst < 10) {
+      this.ctx.scale(2,2);
+      this.scaleConst *= 2;
+    }
 
-      ctx.beginPath();
-      ctx.moveTo(line.startX, line.startY);
+    this.ctx.lineWidth=1/this.scaleConst;
+  }
 
-      if (line.startY < line.endY) {
-        if (line.startX < line.endX)
-          ctx.lineTo(line.startX + (line.endX * portion), line.startY + (line.endY * portion));
-        else
-          ctx.lineTo(line.startX - (line.startX * portion), line.startY + (line.endY * portion))
-      }
+  zoomOut() { // Diminui o zoom do canvas
+    if (this.scaleConst > 1/8) {
+      this.this.ctx.scale(1/2,1/2);
+      this.scaleConst /= 2;
+    }
 
-      if (line.startY > line.endY) {
-        if (line.startX < line.endX)
-          ctx.lineTo(line.startX + (line.endX * portion), line.startY - (line.startY * portion));
-        else
-          ctx.lineTo(line.startX - (line.startX * portion), line.startY - (line.startY * portion))
-      }
+    this.ctx.lineWidth=1/this.scaleConst;
+  }
 
-      if (line.startY === line.endY) {
-        if (line.startX < line.endX)
-          ctx.lineTo(line.startX + (line.endX * portion), line.startY);
-        else
-          ctx.lineTo(line.startX - (line.startX * portion), line.startY);
-      }
+  compass(circle, x, y) { // Desenha o circulo com centro no ponto dado
+    if (circle instanceof Circle) {
+      let startTime = Date.now();
 
-      if (line.startX === line.endX) {
-        if (line.startY < line.endY)
-          ctx.lineTo(line.startX, line.startY + (line.endY * portion));
-        else
-          ctx.lineTo(line.startX, line.startY - (line.startY * portion));
-      }
+      let interval = setInterval(function() {
+        let portion = clamp((Date.now() - startTime) / 400);
 
-      ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, circle.radius, circle.startAngle, circle.finalAngle*portion);
+        this.ctx.stroke();
 
-      if (portion === 1)
-        clearInterval(interval);
+        if (portion === 1)
+          clearInterval(interval);
 
-    }, 10);
+      }, 10);
+    }
+  }
+
+  ruler(line) { // Traça ma reta entre dois pontos (respeitando a direção de desenho)
+    if (line instanceof Line) {
+      let startTime = Date.now();
+
+      let interval = setInterval(function() {
+        let portion = clamp((Date.now() - startTime) / 400);
+
+        this.ctx.beginPath();
+        this.ctx.moveTo(line.startX, line.startY);
+
+        if (line.startY < line.endY) {
+          if (line.startX < line.endX)
+            this.ctx.lineTo(line.startX + (line.endX * portion), line.startY + (line.endY * portion));
+          else
+            this.ctx.lineTo(line.startX - (line.startX * portion), line.startY + (line.endY * portion))
+        }
+
+        if (line.startY > line.endY) {
+          if (line.startX < line.endX)
+            this.ctx.lineTo(line.startX + (line.endX * portion), line.startY - (line.startY * portion));
+          else
+            this.ctx.lineTo(line.startX - (line.startX * portion), line.startY - (line.startY * portion))
+        }
+
+        if (line.startY === line.endY) {
+          if (line.startX < line.endX)
+            this.ctx.lineTo(line.startX + (line.endX * portion), line.startY);
+          else
+            this.ctx.lineTo(line.startX - (line.startX * portion), line.startY);
+        }
+
+        if (line.startX === line.endX) {
+          if (line.startY < line.endY)
+            this.ctx.lineTo(line.startX, line.startY + (line.endY * portion));
+          else
+            this.ctx.lineTo(line.startX, line.startY - (line.startY * portion));
+        }
+
+        this.ctx.stroke();
+
+        if (portion === 1)
+          clearInterval(interval);
+
+      }, 10);
+    }
   }
 }
 

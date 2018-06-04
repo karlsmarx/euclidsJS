@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="./greekRules.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Definições de 1 a 10</title>
+  </head>
+  <body>
+    <section class="page">
+      <h1 class="center">Definições (1 - 10)</h1>
+      <div class="center resume">As definições são fatos não comprovados usados como base para a construção do raciocínio. A definição se
+        diferencia de um axioma por não ser considerado uma "verdade" evidente por si só.<br><br>
+        Você vai notar que as definições de Euclides iniciam simples  e vão se tornando cada vez mais complexas, isso se deve ao fato
+        de que algumas destas definições se tratam de nomenclaturas para elementos complexos.
+      </div>
+      <ol>
+        <li>
+          <blockquote class="quote"><strong>Um ponto não tem partes.</strong></blockquote>
+          <p>Está é a definição mais básica, porém tem partes importantes ímplicitas que são deixadas para o leitor
+          concluir ou são citadas em outras partes do livro. Não tendo partes, um ponto é também indivisivel, além de não
+          ocupar dimensão "espacial", embora na época ainda não existisse esta interpretação. Utilize a caixa ao lado 
+          para demonstração, note que ao utilizar zoom os pontos não se alteram.
+          </p>
+          <blockquote class="p-quote">Se você leu a biblioteca JavaScript incluída no projeto (greekRules.js),
+            talvez tenha percebido que existe uma parte na função plotPoint, responsável por desenhar pontos, que diminui a escala
+            do raio do desenho a cada vez que o zoom aumenta. Isto é devido a natureza do elemento canvas, que não
+            permite "pixels" redondos, e mostra o raio quando aumentamos sua escala.
+          </blockquote>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Uma linha não tem largura.</strong></blockquote>
+          <p>Euclides não se preoucupa em definir linhas, dizendo apenas que estas tem a propriedade de possuir comprimento 
+          (novamente implicito), porém não ter largura, o que as torna elementos geométricos unidimensionais. Utilize a caixa ao lado
+          para demonstração. Note que ao utilizar o zoom, o comprimento da linha aumenta e diminui, mas não sua largura.
+          </p>
+          <blockquote class="p-quote">Este é o motivo para que na nossa biblioteca, todas
+            as vezes que a escala é mudada, a propriedade linewidth do canvas é alterada em conjunto, garantindo que a alteração
+            de zoom não torne as linhas mais grossas.
+          </blockquote>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>O fim de uma linha sempre é um ponto.</strong></blockquote>
+          <p>Está definição é usada em construções que utlizam retas, porém pode ser considerada bastante ambígua. Na
+            próxima definição podemos notar que círculos também são linhas, logo como podemos interpretar o fim de um círculo?
+          </p>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Uma reta é uma linha que passa apenas uma vez em cada um dos seus pontos.</strong></blockquote>
+          <p>
+            Nesta definição temos algumas coisas novamente ímplicitas, tal como o fato de que círculos são linhas, porém não
+            são retas (sua linha passa inifinitamente em seus pontos), e que retas diferentes não podem compartilhar mais de 
+            um ponto, fato que é reiterado mais a frente.
+          </p>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Uma superficie possui somente largura e comprimento.</strong></blockquote>
+          <p>
+            Está definição trata apenas de nomenclatura, visto que nos livros finais euclides passa a tratar de 
+            poliedros tri-dimensionais, necessitando assim de uma denominação para seus lados.
+          </p>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Os lados de uma superfície são linhas.</strong></blockquote>
+          <p>
+            Novamente, está definição é necessária apenas para construções posteriores, embora isto já nos dê uma idéia
+            do que será chamado de polígonos, ou seja, superfícies delimitadas por retas.
+          </p>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Um plano é uma superficie que contém todas as retas.</strong></blockquote>
+          <p>
+            Nesta definição, surgem algumas confusões devido a natureza da palavra "plano". Na interpretação atual, 
+            um plano é sempre infinito, porém isto não fica claro quando euclides define plano. Além disso, a suposição
+            de que planos podem ser finitos parece mais lógica na leitura do livro XI, onde Euclides supõe ser necessário
+            provar que uma linha juntando duas retas paralelas es~´a no mesmo plano, o que não seria necessário se planos
+            fossem infinitos.
+          </p>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Um ângulo é a inclinação entre duas linhas do plano que se cruzam apenas 
+          uma vez em uma reta.</strong></blockquote>
+          <p>
+            O fato de circulos serem linhas se torna muito importante nesta definição, pois na matemática grega, embora o fato
+            seja pouco usado nas provas, um ângulo pode ser formado a partir de um círculo. Na matemática atual isto soa pouco
+            usual.
+          </p>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Quando duas retas formam um ângulo, ele é chamado de "retilíneo".</strong></blockquote>
+          <p>
+            Estes são os ângulos a que estamos acostumados, formados por duas retas com vértice (definido mais a frente) no ponto compratilhado pelas mesmas.
+          </p>
+          <blockquote class="i-quote">Ângulos são muito importantes em todos os livros de "Elementos", por isso é importante
+          ter os seus conceitos muito bem acentados na sua cabeça.</blockquote>
+        </li>
+        <li>
+          <blockquote class="quote"><strong>Quando uma reta posicionada sobre outra produz ângulos iguais, cada um dos ângulos é chamado de "reto", e uma linha é "perpendicular" a  outra.</strong></blockquote>
+          <p>
+            Novamente uma grande definição, aqui temos a junção de dois conceitos que estão intimamente ligados, ângulos retos e perpendicularidade. Na matemática grega não eram utilizadas medidas efetivas, sendo que todas as proposições são feitas partindo de construções anteriores. Implícitamente a estas nomenclaturas, temos os fatos de que a junção de duas linhas produz no mínimo dois ângulos retos.
+          </p>
+        </li>
+      </ol>
+      <div class="navigation">
+        <a href="./Introducao.html">Introdução</a>
+        <a href="./Definicoes2.html">Definições (11 - 18)</a>
+      </div>
+    </section>
+
+    <script>
+      let rules = new Rules();
+
+      let  = rules.bind(this);
+      let l1 = new Line(10, 20, 20, 30);
+
+      let ruler = rules.ruler.bind(this);
+      ruler(l1);
+    </script>
+  </body>
+</html>

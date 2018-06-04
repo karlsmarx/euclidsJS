@@ -1,7 +1,10 @@
 .page {
-  width: 100%;
+  width: auto;
+  margin: 0 5vw 0 5vw;
 
-  font-family: Arial;
+  font-family: "Open Sans";
+
+  text-align: justify;
 }
 
 h1 {
@@ -25,10 +28,36 @@ p {
   margin: 0;
 }
 
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
+li {
+  margin: 0 0 4vw 0;
+}
+
+.resume {
+  width: 40vw;
+
+  margin: 0 auto 5vw auto;
+}
+
+.quote {
+  background: #e9e9e9;
+  border-left: 10px solid #aaa;
+  margin: 0 10px;
+  padding: 0.5em 10px;
+  display: flex;
+}
+
+.p-quote {
+  background: #d9d9ff;
+  border-left: 10px solid #aaf;
+  margin: 0em 10px;
+  padding: 0.5em 10px;
+  display: flex;
+}
+
+.i-quote {
+  background: #ffd9d9;
+  border-left: 10px solid #f33;
+  margin: 0em 10px;
   padding: 0.5em 10px;
   display: flex;
 }
@@ -55,6 +84,22 @@ canvas {
 
 .canvas-content button:hover {
   background-color: #d8d8d8;
+}
+
+.navigation {
+  text-align: center;
+  padding: 5px;
+}
+
+.navigation a {
+  color: #000;
+  text-decoration: none;
+  margin: 15px;
+  font-size: 1.5em;
+}
+
+.navigation a:hover {
+  color: #3599ee;
 }
 
 .left {
