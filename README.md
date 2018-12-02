@@ -22,3 +22,4 @@ Karl Alexander
 - Finalizar os textos do livro 1
 - Determinar a diagramação das páginas
 - Terminar de implementar as regras da biblioteca JS
+- Gerar linhas e circulos sem dimensões
